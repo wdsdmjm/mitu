@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.mitu.mapper.TTripMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.qfedu.mitu.domain.TTrip">
+		<id column="id" property="id" />
+		<result column="logo" property="logo" />
+		<result column="trip_location" property="tripLocation" />
+		<result column="trip_name" property="tripName" />
+		<result column="trip_price" property="tripPrice" />
+		<result column="trip_info" property="tripInfo" />
+		<result column="trip_start_time" property="tripStartTime" />
+		<result column="trip_end_time" property="tripEndTime" />
+	</resultMap>
+
+</mapper>

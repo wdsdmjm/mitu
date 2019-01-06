@@ -1,6 +1,6 @@
 package com.qfedu.mitu.mapper;
 
-import com.qfedu.mitu.domain.User;
+import com.qfedu.mitu.domain.TTrip;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -8,9 +8,9 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
   *  Mapper 接口
  * </p>
  *
- * @author D.Yang
- * @since 2019-01-05
+ * @author zcg
+ * @since 2019-01-06
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface TTripMapper extends BaseMapper<TTrip> {
 
 }

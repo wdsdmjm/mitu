@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *  前端控制器
  * </p>
  *
- * @author D.Yang
- * @since 2019-01-05
+ * @author zcg
+ * @since 2019-01-06
  */
 @Controller
-@RequestMapping("/qfedu.mitu/user")
-public class UserController {
+@RequestMapping("/qfedu.mitu/tFoodsOrder")
+public class TFoodsOrderController {
 	
 }

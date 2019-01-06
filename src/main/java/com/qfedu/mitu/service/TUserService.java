@@ -1,6 +1,6 @@
 package com.qfedu.mitu.service;
 
-import com.qfedu.mitu.domain.User;
+import com.qfedu.mitu.domain.TUser;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -8,9 +8,9 @@ import com.baomidou.mybatisplus.service.IService;
  *  服务类
  * </p>
  *
- * @author D.Yang
- * @since 2019-01-05
+ * @author zcg
+ * @since 2019-01-06
  */
-public interface UserService extends IService<User> {
+public interface TUserService extends IService<TUser> {
 	
 }
