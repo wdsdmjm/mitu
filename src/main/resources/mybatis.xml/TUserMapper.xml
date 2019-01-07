@@ -18,5 +18,31 @@
 		<result column="level" property="level" />
 		<result column="invitation" property="invitation" />
 	</resultMap>
+	<sql id="Base_Column_List">
+    id, password, email, nickname, username, photo, sex, address, sign, background, tel, level, invitation
+  	</sql>
+
+	<select id="selectByName" resultMap="BaseResultMap" parameterType="com.qfedu.mitu.domain.TUser">
+		SELECT
+		<include refid="Base_Column_List"/>
+		FROM t_user WHERE `username`=#{username}
+	</select>
+
+
+	<update id="updatePassword" parameterType="com.qfedu.mitu.domain.TUser">
+        update t_user set password=#{password} where email=#{email}
+    </update>
+
+	<update id="uploadHeadPhoto" parameterType="com.qfedu.mitu.domain.TUser">
+        update t_user set photo=#{photo} where id=#{id}
+    </update>
+
+	<select id="selectByEmail" resultMap="BaseResultMap" parameterType="string">
+		select <include refid="Base_Column_List"/> from t_user where email=#{email}
+	</select>
+
+	<update id="uploadBackGround" parameterType="com.qfedu.mitu.domain.TUser">
+        update t_user set background=#{background} where id=#{id}
+    </update>
 
 </mapper>

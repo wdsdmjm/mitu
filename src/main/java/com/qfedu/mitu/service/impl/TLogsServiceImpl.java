@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author zcg
- * @since 2019-01-06
+ * @since 2019-01-07
  */
 @Service
 public class TLogsServiceImpl extends ServiceImpl<TLogsMapper, TLogs> implements TLogsService {

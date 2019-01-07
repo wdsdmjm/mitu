@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.service.IService;
  * </p>
  *
  * @author zcg
- * @since 2019-01-06
+ * @since 2019-01-07
  */
 public interface TLogsService extends IService<TLogs> {
 	

@@ -1,8 +1,6 @@
 package com.qfedu.mitu.domain;
 
-import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
-import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
@@ -14,28 +12,33 @@ import java.io.Serializable;
  * </p>
  *
  * @author zcg
- * @since 2019-01-06
+ * @since 2019-01-07
  */
 @TableName("t_logs")
 public class TLogs extends Model<TLogs> {
 
     private static final long serialVersionUID = 1L;
 
-	@TableId(value="id", type= IdType.AUTO)
-	private Integer id;
+	private Integer iid;
 	private Integer uid;
 	private String ip;
 	@TableField("log_time")
 	private Date logTime;
 	private String content;
 
-
-	public Integer getId() {
-		return id;
+	public TLogs(Integer uid, String ip, String content) {
+		this.uid = uid;
+		this.ip = ip;
+		this.content = content;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+
+	public Integer getIid() {
+		return iid;
+	}
+
+	public void setIid(Integer iid) {
+		this.iid = iid;
 	}
 
 	public Integer getUid() {
@@ -72,7 +75,7 @@ public class TLogs extends Model<TLogs> {
 
 	@Override
 	protected Serializable pkVal() {
-		return this.id;
+		return this.iid;
 	}
 
 }

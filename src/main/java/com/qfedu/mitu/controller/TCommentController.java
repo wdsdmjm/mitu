@@ -1,5 +1,7 @@
 package com.qfedu.mitu.controller;
 
+import com.qfedu.mitu.comment.vo.Result;
+import com.qfedu.mitu.domain.TUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -14,5 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/qfedu.mitu/tComment")
 public class TCommentController {
-	
+
+
 }
