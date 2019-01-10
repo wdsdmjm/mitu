@@ -17,7 +17,7 @@ public interface TUserMapper extends BaseMapper<TUser> {
 
     int updatePassword(TUser user);
 
-    int updateHeadImage(TUser user);
+    int uploadHeadPhoto(TUser user);
 
     TUser selectByEmail(String email);
 

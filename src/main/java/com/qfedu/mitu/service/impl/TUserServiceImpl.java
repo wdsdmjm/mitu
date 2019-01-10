@@ -27,7 +27,7 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 
     @Override
     public Result uploadHeadPhoto(TUser user) {
-        return ConvertUtil.convert(mapper.updateHeadImage(user), "修改头像");
+        return ConvertUtil.convert(mapper.uploadHeadPhoto(user), "修改头像");
     }
 
     @Override
@@ -40,6 +40,16 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 
     @Override
     public Result uploadBackGround(TUser user) {
-        return ConvertUtil.convert(mapper.uploadBackGround(user), "修改头像");
+        return ConvertUtil.convert(mapper.uploadBackGround(user), "修改背景");
     }
+
+    @Override
+    public Result updatePass(TUser user) {
+        if (user != null && user.getPassword() != null) {
+            String password = EncrypUtil.encAesStr(Constant.REGISTERKEY, user.getPassword());
+            user.setPassword(password);
+        }
+        return ConvertUtil.convert(mapper.updateById(user), "修改密码");
+    }
+
 }

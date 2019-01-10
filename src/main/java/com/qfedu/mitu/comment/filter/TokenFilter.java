@@ -1,18 +1,16 @@
 package com.qfedu.mitu.comment.filter;
 
 import com.alibaba.fastjson.JSON;
-
 import com.qfedu.mitu.comment.constant.Constant;
 import com.qfedu.mitu.comment.utils.JedisUtil;
 import com.qfedu.mitu.comment.vo.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Objects;
+
 
 
 @WebFilter("/*")
@@ -31,10 +29,12 @@ public class TokenFilter implements Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
         JedisUtil jedisUtil = new JedisUtil("www.sueyun.cn", 6379, "298560");
         String uri = req.getRequestURI();
+        System.out.println(uri);
         if (uri.contains("/api/v1/password")) {
             String email = req.getParameter("email");
             String code = req.getParameter("code");
-            if (Objects.equals(jedisUtil.getStr(email), code)) {
+            String redis = jedisUtil.getStr(email);
+            if (redis.equals(code)) {
                 chain.doFilter(request, response);
             } else {
                 resp.getWriter().print(JSON.toJSONString(ResultUtil.setOtherERROR("验证码不正确")));

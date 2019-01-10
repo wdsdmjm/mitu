@@ -123,7 +123,7 @@ public class JedisUtil implements Serializable {
      * @return
      */
     public String getStr(String key){
-        return jedis.get(key);
+         return jedis.get(key);
     }
     public List<String> getList(String key){
         return  jedis.lrange(key,0,countList(key)-1);

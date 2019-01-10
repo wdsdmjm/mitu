@@ -35,4 +35,11 @@ public interface TUserService extends IService<TUser> {
      * @return
      */
     Result uploadBackGround(TUser user);
+
+    /**
+     * 修改用户密码
+     * @param user
+     * @return
+     */
+    Result updatePass(TUser user);
 }

@@ -46,6 +46,7 @@ public class LoginServiceImpl implements LoginService {
             boolean result = EmailUtils.sendModel(email, code);
             if (result) {
                 jedisUtil.addStr(email, code + "", TimeUnit.MINUTES, 5);
+
             }
 
             jedisUtil.addStr(ip, 1 + "", TimeUnit.MINUTES, 3);
