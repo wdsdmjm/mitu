@@ -14,5 +14,5 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface TFoodsOrderService extends IService<TFoodsOrder> {
 
-    Result selectTFoodsOrder(Integer uid);
+//    Result selectTFoodsOrder(Integer uid);
 }
