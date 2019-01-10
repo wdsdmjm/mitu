@@ -13,6 +13,14 @@ public class ResultUtil {
         result.setData(data);
         return result;
     }
+    public static Result setOtherOK(String msg, Object data) {
+        Result result = new Result();
+        result.setCode(Constant.OK);
+        result.setMsg(msg);
+        result.setData(data);
+        return result;
+    }
+
 
     public static Result setOK(String msg, String other, Object data) {
         Result result = new Result();
@@ -27,6 +35,13 @@ public class ResultUtil {
         Result result = new Result();
         result.setCode(Constant.ERROR);
         result.setMsg(msg + "失败");
+        return result;
+    }
+    public static Result setdataERROR(String msg,Object data) {
+        Result result = new Result();
+        result.setCode(Constant.ERROR);
+        result.setMsg(msg + "已签到");
+        result.setData(data);
         return result;
     }
 

@@ -10,5 +10,34 @@
 		<result column="statu" property="statu" />
 		<result column="last_time" property="lastTime" />
 	</resultMap>
-
+	<sql id="Base_Column_List">
+    id, uid, sign_count, statu, last_time
+  </sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from "t_sign"
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="lastsign" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_sign where uid=#{uid}
+		order by last_time desc
+		limit 0,1
+	</select>
+	<insert id="insertsign" parameterType="com.qfedu.mitu.domain.TSign">
+    insert into t_sign ( uid, sign_count,statu,last_time)
+    values ( #{uid,jdbcType=INTEGER}, #{signCount,jdbcType=INTEGER}, #{statu,jdbcType=INTEGER},now())
+  </insert>
+	<update id="updateByUid" parameterType="com.qfedu.mitu.domain.TSign">
+		update t_sign set statu = #{statu,jdbcType=INTEGER}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<select id="penultsign" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		select statu
+		from t_sign where uid=#{uid}
+		order by statu desc
+		limit 1,1
+	</select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.qfedu.mitu.service.impl;
 
+import com.qfedu.mitu.comment.vo.Result;
 import com.qfedu.mitu.domain.TFoodsOrder;
 import com.qfedu.mitu.mapper.TFoodsOrderMapper;
 import com.qfedu.mitu.service.TFoodsOrderService;
@@ -16,5 +17,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TFoodsOrderServiceImpl extends ServiceImpl<TFoodsOrderMapper, TFoodsOrder> implements TFoodsOrderService {
-	
+
+    @Override
+    public Result selectTFoodsOrder(Integer uid) {
+        
+        return null;
+    }
 }

@@ -1,5 +1,6 @@
 package com.qfedu.mitu.service;
 
+import com.qfedu.mitu.comment.vo.Result;
 import com.qfedu.mitu.domain.TSign;
 import com.baomidou.mybatisplus.service.IService;
 
@@ -11,6 +12,11 @@ import com.baomidou.mybatisplus.service.IService;
  * @author zcg
  * @since 2019-01-06
  */
-public interface TSignService extends IService<TSign> {
-	
+public interface TSignService extends IService<TSign>{
+
+    Result judgesame(Integer uid);
+
+    Result addsign(Integer uid);
+
+    Result updatesign(Integer uid);
 }
