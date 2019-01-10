@@ -18,9 +18,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class TFoodsOrderServiceImpl extends ServiceImpl<TFoodsOrderMapper, TFoodsOrder> implements TFoodsOrderService {
 
-    @Override
-    public Result selectTFoodsOrder(Integer uid) {
-        
-        return null;
-    }
+//    @Override
+//    public Result selectTFoodsOrder(Integer uid) {
+//
+//        return null;
+//    }
 }

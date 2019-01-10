@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/qfedu.mitu/tFoodsOrder")
 public class TFoodsOrderController {
-    @Autowired
-    private TFoodsOrderServiceImpl tFoodsOrderService;
-
-    @GetMapping("/selectTFoodsOrder")
-    public Result selectTFoodsOrder(Integer uid){
-        return tFoodsOrderService.selectTFoodsOrder(uid);
-    }
+//    @Autowired
+//    private TFoodsOrderServiceImpl tFoodsOrderService;
+//
+//    @GetMapping("/selectTFoodsOrder")
+//    public Result selectTFoodsOrder(Integer uid){
+//        return tFoodsOrderService.selectTFoodsOrder(uid);
+//    }
 }
