@@ -13,4 +13,11 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  */
 public interface TSignMapper extends BaseMapper<TSign> {
 
+    TSign lastsign(Integer uid);
+
+    void insertsign(TSign signs);
+
+    TSign penultsign(Integer uid);
+
+    void updateByUid(TSign signs);
 }
