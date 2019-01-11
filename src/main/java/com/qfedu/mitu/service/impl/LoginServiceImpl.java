@@ -127,6 +127,21 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
+    public Result emailLogin(TUser user, String ip) {
+        TUser user1 = userMapper.selectEmail(user);
+        String password = EncrypUtil.decAesStr(Constant.REGISTERKEY, user1.getPassword());
+        if (Objects.equals(password, user.getPassword())) {
+
+            String token = TokenUtil.createToken(JSON.toJSONString(user1), user1.getId());
+            jedisUtil.addHash(Constant.TOKENKEY, token, token);
+            logsMapper.insertSelective(new TLogs(user1.getId(), ip, "登录成功"));
+            return ResultUtil.setOK("登录", token, user1);
+        }
+
+        return ResultUtil.setERROR("登录");
+    }
+
+    @Override
     public Result loginOut(String token) {
         jedisUtil.delHash(Constant.TOKENKEY, token);
         jedisUtil.delHash(Constant.CODETOKENKEY, "token" + token);

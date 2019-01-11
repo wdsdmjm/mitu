@@ -12,7 +12,7 @@
 	</resultMap>
 
 	<insert id="insertSelective" parameterType="com.qfedu.mitu.domain.TLogs">
-		<selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">
+		<selectKey resultType="java.lang.Integer" keyProperty="iid" order="AFTER">
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 		insert into t_logs
