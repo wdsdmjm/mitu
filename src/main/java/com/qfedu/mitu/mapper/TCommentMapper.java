@@ -3,6 +3,9 @@ package com.qfedu.mitu.mapper;
 import com.qfedu.mitu.domain.TComment;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * <p>
   *  Mapper 接口
@@ -13,4 +16,6 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  */
 public interface TCommentMapper extends BaseMapper<TComment> {
 
+    List<TComment> selectById(Integer id);
+    List<Map<String, Object>> selectAll();
 }

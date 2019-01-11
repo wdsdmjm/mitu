@@ -1,9 +1,9 @@
 package com.qfedu.mitu.controller;
 
 import com.qfedu.mitu.comment.vo.Result;
-import com.qfedu.mitu.domain.TUser;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.qfedu.mitu.service.TCommentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -13,9 +13,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author zcg
  * @since 2019-01-06
  */
-@Controller
-@RequestMapping("/qfedu.mitu/tComment")
+@RestController
+@RequestMapping("/api/v1")
 public class TCommentController {
 
+    @Autowired
+    private TCommentService service;
 
+    @PostMapping("/comment")
+    public Result getComment(Integer id) {
+
+        return service.showCommentById(id);
+    }
+    @PostMapping("/comments")
+    public Result getAll(Integer page) {
+
+        return service.showAllComments(page);
+    }
 }

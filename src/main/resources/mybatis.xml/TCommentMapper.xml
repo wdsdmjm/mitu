@@ -12,4 +12,14 @@
 		<result column="comment_images" property="commentImages" />
 	</resultMap>
 
+	<sql id="Base_Column_List">
+		id,uid,createtime,readnum,love,comment_images
+  	</sql>
+	<select id="selectById"  resultMap="BaseResultMap">
+		select c.id,c.uid,c.createtime,c.readnum,c.love,c.comment_images from t_comment c left outer join t_user u on c.uid=u.id and id=#{id}
+	</select>
+	<select id="selectAll"  resultMap="BaseResultMap">
+		select c.id,c.uid,c.createtime,c.readnum,c.love,c.comment_images from t_comment c left outer join t_user u on c.uid=u.id and id=#{id}
+	</select>
+
 </mapper>
